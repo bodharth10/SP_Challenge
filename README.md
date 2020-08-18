@@ -64,7 +64,7 @@ $ rspec spec/lib/*
 ### Code:
 
 The script is developed by follow basic ruby SOLID principles . As per single responsibility priciple , "A class should have only a single responsibility. So I have created 3 classes each with single responsibilty . ServerLogParser ie server_log_parser.rb is created as main class and for now it has single reponsibity to initialize and validate a log.file . LogFileParser ie log_file_parser has given responsibity to parse only a .log file. ReportGenerator class has been assigned responsibility for generating the report for logs . Reason behind creating seperate class for log_file is application of Open/close priciple ie main class is open for extensions but close for modifications . ie in future if someone wants to parse file with differnt format or extension it can be done without modifying the main class . 
-As far as log_file_parser is concerned , "parse_file" method is implemented in which i have avoided using each loop and used while loop for improving performance ie less using of memory because it avoids the loading of logs in one go . And then file closed using file.close after the parsing is finished to avoid memory leakage .
+As far as log_file_parser is concerned , "parse_file" method is implemented in which I have avoided using each loop with readlines  and used while loop for improving performance ie less use of memory because it avoids the loading of logs in one go which cause more usage of memory and exerts pressure on GC(garbage collector) . And then file closed using file.close after the parsing is finished to avoid memory leakage .
 All the code is implemented by following Test Driven Development approach(TDD) using rspec . 
 
 ### Scope for improvements:
