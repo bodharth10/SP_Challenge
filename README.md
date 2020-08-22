@@ -1,4 +1,4 @@
-# Smart Pension Coding Challenge
+# Coding Challenge
   Write a ruby script that:
 > a)Receives a log as argument (webserver.log is provided) e.g.: ./parser.rb webserver.log.
 
